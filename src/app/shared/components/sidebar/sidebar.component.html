@@ -1,13 +1,26 @@
 <div class="bg-dark border-right p-3" id="sidebar">
 
-<h3 class="text-light">GifsApp</h3>
-<hr class="text-white">
+    <h3 class="text-light">GifsApp</h3>
+    <hr class="text-white">
 
-<div class="list-group list-reset">
-    <button class="list-group-item list-group-item-action">
-        Valorant
-    </button>
+    <div class="list-group list-reset">
 
-</div>
+        <button 
+        class="list-group-item list-group-item-action btn" 
+        *ngFor="let tag of tags"
+        (click)="searchTag(tag)">
+
+            {{tag| titlecase}}
+
+        </button>
+        <button 
+        *ngIf="tags.length!=0"
+        (click)="deleteLocalStorage()"
+        class="btn btn-danger my-2"
+        >Borrar historial</button>
+
+
+
+    </div>
 
 </div>
